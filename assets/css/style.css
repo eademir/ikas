@@ -1,10 +1,76 @@
 body {
     padding:0;
     margin:0;
-}
-div.right, div.left, .item{
-    float:left;
+    width: 1440px;
+    margin:auto;
 }
 .item{
-    width:20%;
+    float:left;
+    padding:10px;
+}
+div.left{
+    width: 980px;
+    height: 934px;
+    background-color: #f9f9f9;
+}
+.in{
+    width: 225px;
+    height: 301px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    background-color: #ffffff;
+}
+.item .head{
+    width: 225px;
+    height: 150px;
+    background-color: #ffffff;
+}
+.item .title{
+    height:50px;
+}
+.item .title h4{
+    color: #002640;
+    font-family: "Axiforma - Medium";
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+}
+.item .head div{
+    margin:auto;
+    width:60%;
+}
+.item .head img{
+    width: 126px;
+    height: 140px;
+}
+.item .in .body{
+    padding: 2px 10px;
+}
+.item .in .size{
+    height: 20px;
+}
+.item .in .size p{
+    width: 48px;
+    height: 20px;
+    color: #ffffff;
+    font-family: "Axiforma - Medium";
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    padding-top: 4px;
+    text-align: center;
+    border-radius: 4px;
+    background-color: #0087ff;
+}
+.item .head:hover{
+    background-color: #0087ff44;
+}
+.item .in .price {
+    width: 61px;
+    height: 19px;
+    color: #9ba9b3;
+    font-family: "Axiforma - Regular";
+    font-size: 16px;
+    font-weight: 400;
+    font-family: Helvetica;
 }
