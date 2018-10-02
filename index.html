@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <!--fontawesome-->
 </head>
 <body>
     <div class="left">
@@ -16,29 +17,31 @@
             <input type="text" placeholder="Ürün Adı, SKU ya da Barkod ile Ara">
         </nav>
         <div class="list">
-            <div class="item">
-                <div class="in">
-                    <div class="head">
-                        <div>
-                            <img src="assets/img/Bitmapq.png" alt="backbag">
+            <div class="item" data-id="1">
+                <a href="#">
+                    <div class="in">
+                        <div class="head">
+                            <div>
+                                <img src="assets/img/Bitmapq.png" alt="backbag">
+                            </div>
                         </div>
-                    </div>
-                    <div class="body">
-                        <div class="title">
-                            <h4>Little  Amerikan Erkek Sırt Çantası</h4>
-                        </div>
-                        <div class="size">
+                        <div class="body">
+                            <div class="title">
+                                <h4>Little  Amerikan Erkek Sırt Çantası</h4>
+                            </div>
+                            <div class="size">
 
-                        </div>
-                        <div class="price">
-                            <p>$<span>499.00</span></p>
+                            </div>
+                            <div class="price">
+                                <p>$<span>499.00</span></p>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </a>
             </div>
         </div>
         <div class="list">
-            <div class="item">
+            <div class="item" data-id="2">
                 <div class="in">
                     <div class="head">
                         <div>
@@ -60,7 +63,7 @@
             </div>
         </div>
         <div class="list">
-            <div class="item">
+            <div class="item" data-id="3">
                 <div class="in">
                     <div class="head">
                         <img src="" alt="">
@@ -80,7 +83,7 @@
             </div>
         </div>
         <div class="list">
-            <div class="item">
+            <div class="item" data-id="4">
                 <div class="in">
                     <div class="head">
                         <img src="" alt="">
@@ -104,10 +107,18 @@
         <nav class="right">
 
         </nav>
-        <div class="sbasket">
-
+        <div class="sbasket" id="sbasket">
+            <section>
+                <div class="empty"><p> Sepetinizde 0 Ürün bulunmaktadır</p></div>
+            </section>
+            <div class="footer">
+                <button class="blue"></button>
+                <input type="button" class="pay" value="ÖDEME AL" id="price">
+            </div>
         </div>
     </div>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
     <script src="assets/js/script.js"></script>
 </body>
 </html>
