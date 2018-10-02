@@ -35,19 +35,18 @@ $(function() {
 
     }
     //toplam fiyat hesaplama
-    function toplam(sepet) {
+    function toplam(sbasket) {
         var top =0;
-        var fiyat;
-        var adet;
+        var price;
 
         $(".sbasket").each(function() {
-            sepet = $(this);
-            fiyat = parseFloat(sepet.find("span").text().replace(sepet.find("span").text(), ""));
-            top += (fiyat * adet);
+            sbasket = $(this);
+            price = parseFloat(sbasket.find("h4").text().replace(sbasket.find("h4").text(), ""));
+            top += (price);
         });
         $("#price").fadeIn().text(top + "$");
         if ($(".sbasket div").length != 0) {
-            $(".sbasket .empty p").fadeOut();
+            $(".sbasket .empty p.e123").fadeOut();
             $(".sbasket .footer").addClass("show")
         }
         else {
