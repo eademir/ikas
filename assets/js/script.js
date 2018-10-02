@@ -53,7 +53,13 @@ $(function() {
         else {
             $(".sbasket p").fadeIn().text("0 Ürün Bulunmaktadır");
         }
-
-
     }
+
+    //ödeme buttonuna oppup eklenecek
+    $(".pay").click(function(){
+        if (confirm("Sipariş onayı")) {
+        window.location.assign("index.html");
+    }
+    });
+    //ödeme onayı geldikten sonra sayfa yenile ya da yönlendir
 });
