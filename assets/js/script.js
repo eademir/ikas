@@ -31,8 +31,8 @@ $(function() {
     count = 1;
     count = count +1;
     function addBasket(sepet, move) {
-        sepet.find(".empty").append('<ul class="item" data-id="' + move.attr("data-id") + '">' + '<div class="counter"><div class="count"><p>'+ count +'</p></div></div>' + '<li class="title"><h4>' + move.find("h4").html() + '</h4><ul class="size"><p>'+ move.find("p") +'</p></ul></li><li class=price" style="float: right;width: 130px;text-align: right;"><h4>'  + move.find("span").html() + 'TL<h4></li></ul>');
-
+        sepet.find(".empty").append('<ul class="item" data-id="' + move.attr("data-id") + '">' + '<div class="counter"><div class="count"><p>'+ count +'</p></div></div>' + '<li class="title"><h4>' + move.find("h4").html() + '</h4><ul class="size"><p>'+ move.find(".size") +'</p></ul></li><li class=price" style="float: right;width: 130px;text-align: right;"><h4>'  + move.find("span").html() + 'TL<h4></li></ul>');
+        console.log(move.find("p"))
     }
     //toplam fiyat hesaplama
     function toplam(sbasket) {
@@ -41,9 +41,10 @@ $(function() {
 
         $(".sbasket").each(function() {
             sbasket = $(this);
-            price = parseFloat(sbasket.find("h4").text().replace(sbasket.find("h4").text(), ""));
+            price = parseFloat(sbasket.find("span").text().replace(sbasket.find("span").text(), ""));
             top += (price);
         });
+        console.log(price)
         $("#price").fadeIn().text(top + "$");
         if ($(".sbasket div").length != 0) {
             $(".sbasket .empty p.e123").fadeOut();
