@@ -28,33 +28,44 @@ $(function() {
             toplam();
         }
     });
-    count = 1;
-    count = count +1;
+    //silme
+    //fikir değiştirdim
+    let count = 1;
     function addBasket(sepet, move) {
-        sepet.find(".empty").append('<ul class="item" data-id="' + move.attr("data-id") + '">' + '<div class="counter"><div class="count"><p>'+ count +'</p></div></div>' + '<li class="title"><h4>' + move.find("h4").html() + '</h4><ul class="size"><p>'+ move.find(".size") +'</p></ul></li><li class=price" style="float: right;width: 130px;text-align: right;"><h4>'  + move.find("span").html() + 'TL<h4></li></ul>');
-        console.log(move.find("p"))
-    }
-    //toplam fiyat hesaplama
-    function toplam(sbasket) {
-        var top =0;
-        var price;
-
-        $(".sbasket").each(function() {
-            sbasket = $(this);
-            price = parseFloat(sbasket.find("span").text().replace(sbasket.find("span").text(), ""));
-            top += (price);
-        });
-        console.log(price)
-        $("#price").fadeIn().text(top + "$");
-        if ($(".sbasket div").length != 0) {
-            $(".sbasket .empty p.e123").fadeOut();
-            $(".sbasket .footer").addClass("show")
+        sepet.find(".empty").append('<ul class="item" data-id="' + move.attr("data-id") + '">' + '<div class="counter"><div class="count"><p>'+ count +'</p></div></div>' + '<li class="title"><h4>' + move.find("h4").html() + '</h4><ul class="size"><p>'+ move.find(".size p").html() +'</p></ul></li><li class="price" style="float: right;width: 130px;text-align: right;"><h4>'  + move.find("span").html() + 'TL<h4></li></ul>');
+        count = count +1;
+        //bedeni olmayan ürünün beden kısmını gizleme
+        if(move.find(".size p").html() != undefined){
+            $(".sbasket .size p").addClass("");
         }
         else {
-            $(".sbasket p").fadeIn().text("0 Ürün Bulunmaktadır");
+            $(".sbasket .size p").last().fadeOut(0);
         }
-    }
-
+    };
+    
+    //toplam fiyat hesaplama
+    function toplam(sbasket) {
+        let top = 0;
+        let price = 0;
+        $(".sbasket .empty .item").each(function() {
+            sbasket = $(this);
+            price = parseFloat(sbasket.find(".price h4").text());
+            top += (price);
+        });
+        $("#price").fadeIn().text("$ " + top);
+        //kdv  hesabuı
+        const kdv = top*(0.18)
+        $("#kdv").text("$"+kdv)
+        console.log(top)
+        if ($(".sbasket div").length != 0) {
+            $(".sbasket .empty p.e123").fadeOut(0);
+            $(".sbasket .footer").addClass("show");
+        }
+        else {
+            $(".sbasket .empty .e123").fadeIn();
+            $(".sbasket .footer").removeClass("show")
+        }
+    };
     //ödeme buttonuna oppup eklenecek
     $(".pay").click(function(){
         if (confirm("Sipariş onayı")) {
