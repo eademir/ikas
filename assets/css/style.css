@@ -15,6 +15,7 @@ div.left{
     height: 934px;
     background-color: #f9f9f9;
     float:left;
+    position: relative;
 }
 .in{
     width: 225px;
@@ -175,7 +176,7 @@ li{
 section{
     height:750px;
 }
-.right .footer{
+.sbasket .footer{
     display:none;
     border-top: 1px solid #c0c0c0;
 }
@@ -208,10 +209,9 @@ section{
     color: #7c7c7c;
 }
 .fa-user-plus{
-    font-size:20px;
-    padding:35px;
+    font-size: 20px;
     color: #fff;
-    float:left;
+    padding:35px;
 }
 .item button{
     z-index: 1;
@@ -229,8 +229,22 @@ section{
     font-size:16px;
     text-align:center;
 }
+.fa-ellipsis-h{
+    font-size: 20px;
+    color: #fff;
+    padding:35px;
+}
+.fa-th{
+    border-radius: 2px;
+    text-align: center;
+    font-size: 19px;
+    padding: 30px 225px;
+}
 .left .item .button:hover{
     background-color: #ffffff;
+}
+.left .item .button:hover + .head:hover{
+    background-color: #0087ff44;
 }
 .e123{
     text-align: center;
@@ -239,4 +253,40 @@ section{
     font-family: "Axiforma - Regular";
     font-size: 18px;
     font-weight: 400;
+}
+.left .footer{
+    position:absolute;
+    bottom: 0;
+    width:100%;
+    border: 1px solid #d4dbe3;
+}
+.left .footer .fleft{
+    width: 50%;
+    height: 80px;
+    background-color: #ffffff;
+    float:left;
+    border: 1px solid #d4dbe3;
+    position: relative;
+}
+.left .footer .flright{
+    width: 50%;
+    height: 80px;
+    background-color: #f9f9f9;
+    float:left;
+    border: 1px solid #d4dbe3;
+    position: relative;
+}
+.right nav ul{
+    padding:0;
+    margin:0;
+    list-style: none;
+}
+.right nav ul li {
+    display:inline-block;
+}
+.right nav ul li a{
+    font-weight: 700;
+    color: #fff;
+    font-size: 20px;
+    padding: 35px;  
 }
